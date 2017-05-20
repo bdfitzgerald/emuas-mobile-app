@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Bookings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list padding *ngFor="let item of bookings">
+      <ion-list-header no-margin>
+        <h1>{{item.title}}</h1>
+      </ion-list-header>
+          <ion-item-sliding *ngIf="item.accom">
+            <ion-item>
+              <h4>Accomodation:</h4>
+              <p>{{item.accom.startDate}}<span *ngIf="item.accom.startDate != item.accom.endDate"> - {{item.accom.endDate}}</span></p>
+            </ion-item>
+            <ion-item-options side="right">
+              <button ion-button>
+                <ion-icon name="trash"></ion-icon>
+                delete
+              </button>
+              <button ion-button color="warning">
+                <ion-icon name="create"></ion-icon>
+                edit
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+          <ion-item-sliding *ngIf="item.flying">
+            <ion-item>
+              <h4>Flying:</h4>
+              <p>{{item.flying.startDate}}<span *ngIf="item.flying.startDate != item.flying.endDate"> - {{item.flying.endDate}}</span></p>
+            </ion-item>
+            <ion-item-options side="right">
+              <button ion-button>
+                <ion-icon name="trash"></ion-icon>
+                delete
+              </button>
+              <button ion-button color="warning">
+                <ion-icon name="create"></ion-icon>
+                edit
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+          <ion-item-sliding *ngIf="item.mt">
+            <h4>MT:</h4>
+            <ion-item>
+              <p *ngIf="item.mt.from">{{item.mt.from.date}} - {{item.mt.from.time}} - {{item.mt.from.loc}}</p>
+              <p *ngIf="item.mt.to">{{item.mt.to.date}} - {{item.mt.to.time}} - {{item.mt.to.loc}}</p>
+            </ion-item>
+            <ion-item-options side="right">
+              <button ion-button>
+                <ion-icon name="trash"></ion-icon>
+                delete
+              </button>
+              <button ion-button color="warning">
+                <ion-icon name="create"></ion-icon>
+                edit
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+      </ion-list>
+
+</ion-content>

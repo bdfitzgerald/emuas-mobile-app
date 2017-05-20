@@ -1,0 +1,87 @@
+  <ion-content padding>
+    <ion-card *ngFor="let item of bookings">
+    <ion-list>
+      <ion-list-header no-margin color="primary">
+        <h1>{{item.title}}</h1>
+      </ion-list-header>
+      <ion-item-sliding *ngIf="item.flying">
+        <ion-item>
+          <h4>Flying:</h4>
+          <p>{{item.flying.startDate}}<span *ngIf="item.flying.startDate != item.flying.endDate"> - {{item.flying.endDate}}</span></p>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button>
+            <ion-icon name="trash"></ion-icon>
+            Cancel
+          </button>
+          <button ion-button color="warning">
+            <ion-icon name="create"></ion-icon>
+            Edit
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+      <ion-item-sliding *ngIf="item.accom">
+        <ion-item>
+          <h4>Accomodation:</h4>
+          <p>{{item.accom.startDate}}<span *ngIf="item.accom.startDate != item.accom.endDate"> - {{item.accom.endDate}}</span></p>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button>
+            <ion-icon name="trash"></ion-icon>
+            Cancel
+          </button>
+          <button ion-button color="warning">
+            <ion-icon name="create"></ion-icon>
+            Edit
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+      <ion-item-sliding *ngIf="item.mt">
+        <ion-item>
+          <h4>MT:</h4>
+          <p *ngIf="item.mt.from">{{item.mt.from.date}} - {{item.mt.from.time}} - {{item.mt.from.loc}}</p>
+          <p *ngIf="item.mt.to">{{item.mt.to.date}} - {{item.mt.to.time}} - {{item.mt.to.loc}}</p>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button>
+            <ion-icon name="trash"></ion-icon>
+            Cancel
+          </button>
+          <button ion-button color="warning">
+            <ion-icon name="create"></ion-icon>
+            Edit
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+      <ion-item>
+        <ion-row *ngIf="!item.group">
+          <ion-col>
+            <button ion-button icon-left clear small color="warning">
+              <ion-icon name="create"></ion-icon>
+              <div>Edit</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="trash"></ion-icon>
+              <div>Cancel</div>
+            </button>
+          </ion-col>
+          <ion-col center text-center>
+            <ion-note>
+              Individual
+            </ion-note>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="item.group">
+          <ion-col center text-center>
+            <ion-note>
+              Group
+            </ion-note>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+    </ion-card>
+
+  </ion-content>
