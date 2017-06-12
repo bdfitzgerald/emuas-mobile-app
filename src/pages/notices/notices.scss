@@ -1,18 +1,5 @@
 page-notices {
-  ion-badge {
-    float: right;
-  }
-  ion-label {
-    white-space: nowrap;
-  }
-}
-
-ion-item.notice-header {
-  background: $primary;
-  h2 {
-    color: #fff;
-  }
-  p {
-    color: #C6C6C6;
+  .card-md h2 {
+    color: $primary;
   }
 }

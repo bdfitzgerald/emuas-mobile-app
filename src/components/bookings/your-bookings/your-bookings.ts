@@ -1,11 +1,5 @@
 import { Component } from '@angular/core';
 
-/*
-  Generated class for the DashboardBookings component.
-
-  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
-  for more info on Angular 2 Components.
-*/
 @Component({
   selector: 'your-bookings',
   templateUrl: 'your-bookings.html'
@@ -21,21 +15,21 @@ export class YourBookings {
         title: 'Flying',
         group: false,
         accom: {
-          startDate: '8th May, 2017',
-          endDate: '8th May, 2017'
+          startDate: '2017/06/08',
+          endDate: '2017/06/08'
         },
         flying: {
-          startDate: '9th May, 2017',
-          endDate: '9th May, 2017'
+          startDate: '2017/06/09',
+          endDate: '2017/06/09'
         },
         mt: {
           from: {
-            date: '8th May',
+            date: '2017/06/08',
             time: 'Afternoon',
             loc: 'Loughborough'
           },
           to: {
-            date: '9th May',
+            date: '2017/06/09',
             time: 'Afternoon',
             loc: 'Cranwell'
           }
@@ -45,17 +39,17 @@ export class YourBookings {
         title: 'Hockey',
         group: true,
         accom: {
-          startDate: '8th May, 2017',
-          endDate: '8th May, 2017'
+          startDate: '10/01/2015',
+          endDate: '10/02/2015'
         },
         mt: {
           from: {
-            date: '8th May',
+            date: '2017/06/08',
             time: 'Afternoon',
             loc: 'Loughborough'
           },
           to: {
-            date: '10th May',
+            date: '2017/06/10',
             time: 'Afternoon',
             loc: 'Cranwell'
           }

@@ -1,22 +1,22 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, PopoverController } from 'ionic-angular';
+import { UserFilter } from '../../components/user/filter/user-filter';
 
-/*
-  Generated class for the Users page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
-  selector: 'page-users',
+  selector: 'page-members',
   templateUrl: 'users.html'
 })
 export class Users {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController ) {
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad UsersPage');
+  }
+
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(UserFilter);
+    popover.present({
+      ev: myEvent
+    });
   }
 
 }

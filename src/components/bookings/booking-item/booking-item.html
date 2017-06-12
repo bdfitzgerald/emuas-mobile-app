@@ -1,0 +1,48 @@
+<ion-card>
+  <ion-list>
+    <ion-list-header no-margin color="primary">
+      <h1>{{booking.title}}</h1>
+    </ion-list-header>
+    <ion-item *ngIf="booking.flying">
+        <h4>Flying:</h4>
+        <p>{{booking.flying.startDate | date: 'EEEE dd MMMM'}}<span *ngIf="booking.flying.startDate != booking.flying.endDate"> - {{booking.flying.endDate | date: 'EEEE dd MMMM'}}</span></p>
+    </ion-item>
+    <ion-item *ngIf="booking.accom">
+        <h4>Accommodation:</h4>
+        <p>{{booking.accom.startDate | date: 'EEEE dd MMMM'}}<span *ngIf="booking.accom.startDate != booking.accom.endDate"> - {{booking.accom.endDate | date: 'EEEE dd MMMM'}}</span></p>
+    </ion-item>
+    <ion-item *ngIf="booking.mt">
+        <h4>MT:</h4>
+        <p *ngIf="booking.mt.from">{{booking.mt.from.date | date: 'EEEE dd MMMM'}} - {{booking.mt.from.time}} - {{booking.mt.from.loc}}</p>
+        <p *ngIf="booking.mt.to">{{booking.mt.to.date | date: 'EEEE dd MMMM'}} - {{booking.mt.to.time}} - {{booking.mt.to.loc}}</p>
+    </ion-item>
+    <ion-item>
+      <ion-row *ngIf="!booking.group">
+        <ion-col>
+          <button ion-button icon-left clear small color="warning">
+            <ion-icon name="create"></ion-icon>
+            <div>Edit</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="trash"></ion-icon>
+            <div>Cancel</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <ion-note>
+            Individual
+          </ion-note>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="booking.group">
+        <ion-col center text-center>
+          <ion-note>
+            Group
+          </ion-note>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+</ion-card>

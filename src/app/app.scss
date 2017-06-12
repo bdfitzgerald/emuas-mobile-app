@@ -43,3 +43,29 @@ ion-label {
 [padding] h1:first-child, [padding] h2:first-child, [padding] h3:first-child, [padding] h4:first-child, [padding] h5:first-child, [padding] h6:first-child {
   margin: 0;
 }
+
+.header-md-primary {
+  background: #d32f2f;
+}
+
+.scroll-content {
+  padding: 0!important;
+}
+
+.popover-content {
+  top: 12px!important;
+  right: 10px!important;
+  left: auto!important;
+}
+
+.platform-mobile textarea.text-input {
+  height: 100%;
+}
+
+.pull-right {
+  float: right;
+}
+
+.center-align {
+  text-align: center;
+}

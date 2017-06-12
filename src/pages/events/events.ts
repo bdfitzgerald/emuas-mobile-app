@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, App } from 'ionic-angular';
 
-import { EventsSingle } from '../../pages/events-single/events-single';
+import { YourEvents } from '../../components/events/your-events/your-events';
 
 @Component({
   selector: 'page-events',
@@ -10,7 +10,9 @@ import { EventsSingle } from '../../pages/events-single/events-single';
 export class Events {
   type: string = "attending";
   events: any;
-  event: any;
+  all: any;
+  attending: any;
+  created: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public appCtrl: App) {
     this.events = [
@@ -19,11 +21,9 @@ export class Events {
       { title: 'Strike', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', user: 'Off Cdt Dixon', date: '1st - 10th July, 2017', attending: '14', submitted: '2d', attend: false, created: false }
     ]
 
+    this.all = YourEvents;
+    this.attending = YourEvents;
+    this.created = YourEvents;
 
-  }
-
-  viewEvent(id) {
-    this.event = this.events[id];
-    this.appCtrl.getRootNav().push(EventsSingle, this.event)
   }
 }

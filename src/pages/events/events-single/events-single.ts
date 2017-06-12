@@ -1,8 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController, NavParams, ToastController } from 'ionic-angular';
 
 import { ModalController } from 'ionic-angular';
-import { AttendingModal } from '../../components/modals/attending/attending-modal';
+import { AttendingModal } from '../../../components/modals/attending/attending-modal';
 
 @Component({
   selector: 'page-events-single',
@@ -14,7 +14,12 @@ export class EventsSingle {
   attending: any;
   calendar: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public toastCtrl: ToastController) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public modalCtrl: ModalController,
+    public toastCtrl: ToastController
+  ) {
 
     this.event = navParams.data;
 

@@ -1,35 +1,7 @@
 <ion-content padding>
-<ion-list *ngFor="let item of events let id = index">
-  <ion-card>
-    <ion-item color="primary">
-      <ion-card-title item-left no-padding no-margin >
-        <h2 ion-text color="white">{{item.title}}</h2>
-      </ion-card-title>
-    </ion-item>
-
-    <ion-item>
-      <ion-avatar item-left>
-        <img src="https://ionicframework.com/dist/preview-app/www/assets/img/marty-avatar.png">
-      </ion-avatar>
-      <h2>{{item.user}}</h2>
-      <p>{{item.date}}</p>
-    </ion-item>
-
-    <ion-row>
-      <ion-col>
-        <button ion-button icon-left clear small>
-          <ion-icon name="people"></ion-icon>
-          <div (click)="showAttending(id)">{{item.attending}} Attending</div>
-        </button>
-      </ion-col>
-      <ion-col>
-        <button ion-button icon-left clear small>
-          <ion-icon name="text"></ion-icon>
-          <div (click)="viewEvent(id)">View More</div>
-        </button>
-      </ion-col>
-    </ion-row>
-
-  </ion-card>
-</ion-list>
+  <ion-list>
+    <event-item *ngFor="let event of events" [event]="event"></event-item>
+  </ion-list>
 </ion-content>
+
+<event-add></event-add>

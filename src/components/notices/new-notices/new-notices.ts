@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, App } from 'ionic-angular';
-
-import { NoticesSingle } from '../../../pages/notices-single/notices-single';
 
 @Component({
   selector: 'new-notices',
@@ -10,21 +7,15 @@ import { NoticesSingle } from '../../../pages/notices-single/notices-single';
 export class NewNotices {
 
   notices: any;
-  notice: any;
 
-  constructor( public navCtrl: NavController, public navParams: NavParams, public appCtrl: App ) {
-
+  constructor() {
     this.notices = [
-      {id: 1, title: 'Planes', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', type: 'Flying', user: 'Matt Roper'},
-      {id: 2, title: 'Skiing', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', type: 'AT', user: 'GTI'},
-      {id: 3, title: 'More Planes', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', type: 'Flying', user: 'Liam Osbiston'},
+      {title: 'Planes', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', type: 'Flying', user: 'Matt Roper', created: '27th June', comments: 3, views: 99},
+      {title: 'Skiing', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', type: 'AT', user: 'GTI', created: '29th June', comments: 0, views: 24},
+      {title: 'More Planes', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', type: 'Flying', user: 'Liam Osbiston', created: '30th June', comments: 1, views: 45},
     ];
 
-  }
 
-  viewNotice(id) {
-    this.notice = this.notices[id];
-    this.appCtrl.getRootNav().push(NoticesSingle, this.notice)
   }
 
 }

@@ -25,16 +25,19 @@ $font-path: "../assets/fonts";
 
 $colors: (
   primary:    #d32f2f,
-  secondary:  #32db64,
+  secondary:  #FFC107,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
+  grey:       #c5c5c5,
   warning:    orange,
   success:    green,
 );
 
+$light: #f4f4f4;
 $primary: #d32f2f;
 $warning: orange;
+$grey: #c5c5c5;
 
 // App iOS Variables
 // --------------------------------------------------

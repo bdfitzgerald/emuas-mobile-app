@@ -1,0 +1,47 @@
+<ion-header color="primary">
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>New Notice</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card padding>
+
+    <ion-list no-lines>
+
+      <ion-item>
+        <ion-label fixed>Title</ion-label>
+        <ion-input type="text" [(ngModel)]="title"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Category</ion-label>
+        <ion-select [(ngModel)]="category">
+          <ion-option value="nes">General</ion-option>
+          <ion-option value="n64">Sports</ion-option>
+          <ion-option value="ps">Flying</ion-option>
+          <ion-option value="genesis">Force Development</ion-option>
+          <ion-option value="saturn">Ents</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-textarea placeholder="Enter message" style="height: 24rem" [(ngModel)]="message"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <button ion-button clear (click)="addFile()">Add File</button>
+      </ion-item>
+
+      <ion-item>
+        <button ion-button block>Save</button>
+      </ion-item>
+
+    </ion-list>
+
+  </ion-card>
+
+</ion-content>

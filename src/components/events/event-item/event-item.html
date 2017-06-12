@@ -1,0 +1,34 @@
+<ion-card>
+  <ion-item color="primary">
+    <ion-card-title item-left no-padding no-margin >
+      <h2 ion-text color="white">{{event.title}}</h2>
+    </ion-card-title>
+  </ion-item>
+  <div (click)="viewEvent()">
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="/assets/images/dft-avt.jpg">
+      </ion-avatar>
+      <h2>{{event.user}}</h2>
+      <p>{{event.date}}</p>
+    </ion-item>
+
+    <ion-item>
+      {{event.message}}
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="people"></ion-icon>
+          <div (click)="showAttending()">{{event.attending}} Attending</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small class="pull-right">
+          <div>View More</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-card>

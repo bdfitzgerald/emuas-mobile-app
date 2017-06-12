@@ -1,24 +1,25 @@
-<ion-item-sliding *ngFor="let user of users">
+<ion-item-sliding>
 
-  <ion-item>
+  <ion-item (click)="memberDetails()">
     <ion-avatar item-left>
-      <img src="https://ionicframework.com/dist/preview-app/www/assets/img/marty-avatar.png">
+      <img src="/assets/images/dft-avt.jpg">
     </ion-avatar>
     <h2>{{user.name}}</h2>
+    <p>Here is a comment</p>
   </ion-item>
-
   <ion-item-options side="right">
-
-    <button ion-button color="warning">
-      <ion-icon name="mail"></ion-icon>
-      Message
-    </button>
-
-    <button ion-button color="success">
+    <button ion-button color="secondary">
       <ion-icon name="call"></ion-icon>
       Call
     </button>
-
+    <button ion-button color="success">
+      <ion-icon name="text"></ion-icon>
+      Message
+    </button>
+    <button ion-button color="primary">
+      <ion-icon name="mail"></ion-icon>
+      Email
+    </button>
   </ion-item-options>
 
 </ion-item-sliding>

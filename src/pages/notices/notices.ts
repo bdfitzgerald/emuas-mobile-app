@@ -1,25 +1,22 @@
 import { Component } from '@angular/core';
 
-import { ModalController } from 'ionic-angular';
-
 @Component({
   selector: 'page-notices',
   templateUrl: 'notices.html'
 })
 export class Notices {
 
-  notices: any;
-  notice: any
+  categories: any;
 
-  constructor( public modalCtrl: ModalController) {
+  constructor() {
 
-    this.notices = [
-      {id: 1, title: 'Planes', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', type: 'Flying', user: 'Matt Roper'},
-      {id: 2, title: 'Skiing', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', type: 'AT', user: 'GTI'},
-      {id: 3, title: 'More Planes', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', type: 'Flying', user: 'Liam Osbiston'},
-      {id: 4, title: 'Freedom Of The City', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', type: 'General', user: 'Josh Smullen'},
-      {id: 5, title: 'STRIKE', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', type: 'FD', user: 'Tom Dixon'},
-    ];
+    this.categories = [
+      {name: "General Notices", description: "This is a short description", icon: "text", color: "primary", new: 0, posts: 22 },
+      {name: "Sports", description: "This is a short description", icon: "football", color: "secondary", new: 2, posts: 8 },
+      {name: "Flying", description: "This is a short description", icon: "jet", color: "", new: 1, posts: 4 },
+      {name: "Force Development", description: "This is a short description", icon: "compass", color: "success", new: 0, posts: 8 },
+      {name: "Ents", description: "This is a short description", icon: "beer", color: "warning", new: 5, posts: 7 }
+    ]
 
   }
 

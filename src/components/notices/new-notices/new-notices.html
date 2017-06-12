@@ -2,29 +2,9 @@
 <ion-content padding>
   <ion-list >
 
-    <ion-card *ngFor="let item of notices let i = index" >
-
-      <ion-item class="notice-header">
-        <ion-avatar item-left>
-          <img src="https://ionicframework.com/dist/preview-app/www/assets/img/marty-avatar.png">
-        </ion-avatar>
-        <h2>{{item.user}}</h2>
-        <p>November 5, 1955</p>
-      </ion-item>
-
-      <ion-card-content>
-        <ion-item>
-          {{item.title}}
-          <ion-badge>{{item.type}}</ion-badge>
-        </ion-item>
-        <ion-item>
-          {{item.message}}
-        </ion-item>
-        <button ion-button clear (click)="viewNotice(i)">View</button>
-      </ion-card-content>
-
-
-    </ion-card>
+    <notice-item *ngFor="let notice of notices" [notice]="notice"></notice-item>
 
   </ion-list>
 </ion-content>
+
+<notice-add></notice-add>

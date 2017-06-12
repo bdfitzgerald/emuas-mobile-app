@@ -1,3 +1,4 @@
+
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar color="primary">
@@ -9,17 +10,17 @@
     <ion-list>
       <ion-item>
         <ion-avatar item-left>
-          <img src="https://ionicframework.com/dist/preview-app/www/assets/img/avatar-finn.png">
+          <img src="/assets/images/dft-avt.jpg">
         </ion-avatar>
-        <h2 color="primary">Byron Fitzgerald</h2>
-        <h3>OC - 30164112</h3>
+        <h2 color="primary">{{user.details.name}}</h2>
+        <h3 >30164112</h3>
         <p>Webmaster/Ents</p>
       </ion-item>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        <h3 color="primary">{{p.title}}</h3>
+      <button menuClose ion-item *ngFor="let page of pages" (click)="openPage(page)">
+        <h3 color="primary">{{page.title}}</h3>
       </button>
-      <button menuClose ion-item>
-        <h3 color="primary">Logout</h3>
+      <button menuClose ion-item (click)="logout()">
+        <h3 color="primary" >Logout</h3>
       </button>
     </ion-list>
   </ion-content>
@@ -28,3 +29,4 @@
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+

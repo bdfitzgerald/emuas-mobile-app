@@ -1,0 +1,41 @@
+<ion-card>
+
+  <ion-item class="notice-header" color="primary">
+    <ion-avatar item-left>
+      <img src="/assets/images/dft-avt.jpg">
+    </ion-avatar>
+    <h2>{{notice.user}}</h2>
+    <p>{{notice.created}}</p>
+  </ion-item>
+
+  <div (click)="viewNotice()">
+
+    <ion-item>
+        <h1>{{notice.title}}</h1>
+      <ion-badge item-right *ngIf="notice.unread">Unread</ion-badge>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left center clear>
+          <ion-icon name="text"></ion-icon>
+          <div> {{notice.comments}} Comments</div>
+        </button>
+      </ion-col>
+      <ion-col class="center-align">
+        <button ion-button icon-left  clear>
+          <ion-icon name="eye"></ion-icon>
+          <div> {{notice.views}} Views</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button  clear class="pull-right">
+          <div> View</div>
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </div>
+
+
+</ion-card>

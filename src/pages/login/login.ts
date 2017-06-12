@@ -14,21 +14,24 @@ export class Login {
   password:string = '';
   name:string = '';
 
-  constructor(public navCtrl: NavController, public auth:Auth, public user: User, public toastCtrl: ToastController, public loadingCtrl:LoadingController) {}
+  constructor(public navCtrl: NavController, public auth: Auth, public user: User, public toastCtrl: ToastController, public loadingCtrl:LoadingController) {}
 
+  doGoogleLogin() {
+    this.auth.login('google');
+  }
   /*
    for both of these, if the right form is showing, process the form,
    otherwise show it
    */
   doLogin() {
-    if(this.showLogin) {
-      console.log('process login');
+    if (this.showLogin) {
 
-      if(this.email === '' || this.password === '') {
+
+      if (this.email === '' || this.password === '') {
         let toast = this.toastCtrl.create({
           message: 'Please fill in all fields',
           duration: 3000,
-          position: 'top',
+          position: 'bottom',
           'showCloseButton': true
         });
         toast.present();
@@ -40,7 +43,9 @@ export class Login {
       });
       loader.present();
 
-      this.auth.login('basic', {'email':this.email, 'password':this.password}).then(() => {
+      let details: UserDetails = {'email': this.email, 'password': this.password};
+
+      this.auth.login('basic', details).then(() => {
         console.log('ok i guess?');
         loader.dismissAll();
         this.navCtrl.setRoot(Dashboard);
@@ -50,17 +55,16 @@ export class Login {
 
         let errors = '';
         if(err.message === 'UNPROCESSABLE ENTITY') errors += 'Email isn\'t valid.<br/>';
-        else if(err.message === 'UNAUTHORIZED') errors += 'Password is required.<br/>';
-        else errors = 'Could Not Login';
+        if(err.message === 'UNAUTHORIZED') errors += 'Password is required.<br/>';
+
         let toast = this.toastCtrl.create({
-          message: errors,
+          message: 'Email or password is incorrect',
           duration: 3000,
-          position: 'top',
+          position: 'bottom',
           'showCloseButton': true
         });
         toast.present();
         return;
-
       });
     } else {
       this.showLogin = true;
@@ -78,7 +82,7 @@ export class Login {
         let toast = this.toastCtrl.create({
           message: 'Please fill in all fields',
           duration: 3000,
-          position: 'top',
+          position: 'bottom',
           'showCloseButton': true
         });
         toast.present();
@@ -108,14 +112,14 @@ export class Login {
           console.log(e);
           if(e === 'required_email') errors += 'Email is required.<br/>';
           if(e === 'required_password') errors += 'Password is required.<br/>';
-          if(e === 'conflict_email') errors += 'A user with this email already exists.<br/>';
+          if(e === 'conflict_email') errors += 'A user-single with this email already exists.<br/>';
           //don't need to worry about conflict_username
           if(e === 'invalid_email') errors += 'Your email address isn\'t valid.';
         }
         let toast = this.toastCtrl.create({
           message: errors,
           duration: 3000,
-          position: 'top',
+          position: 'bottom',
           'showCloseButton': true
         });
         toast.present();

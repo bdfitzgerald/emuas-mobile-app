@@ -1,0 +1,22 @@
+<ion-card (click)="viewCategory()">
+
+  <ion-item>
+    <ion-icon [name]="category.icon" color="{{category.color}}" item-left></ion-icon>
+    <h2>{{category.name}}</h2>
+    <p>{{category.description}}</p>
+    <ion-badge item-right *ngIf="category.new != 0">{{category.new}}</ion-badge>
+  </ion-item>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left center clear>
+        <ion-icon name="text"></ion-icon>
+        <div> {{category.posts}} Posts</div>
+      </button>
+    </ion-col>
+    <ion-col text-center>
+      <button ion-button clear class="pull-right">View All</button>
+    </ion-col>
+  </ion-row>
+
+</ion-card>

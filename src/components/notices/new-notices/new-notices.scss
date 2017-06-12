@@ -5,4 +5,7 @@ new-notices {
   ion-label {
     white-space: nowrap;
   }
+  ion-fab[bottom] {
+    bottom: 65px;
+  }
 }
